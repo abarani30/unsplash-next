@@ -17,8 +17,8 @@ export default function PhotoModal({show}) {
   const dispatch = useDispatch()
   const [tags, setTags] = useState([])
   const [suggestions, setSuggestions] = useState([])
-  const [inputValue, setInputValue] = useState("")
-
+  const [location, setLocation] = useState("")
+  const [description, setDescription] = useState("")
 
   const closeModal = () => {
     dispatch(toggle())
@@ -30,7 +30,7 @@ export default function PhotoModal({show}) {
     const inputValue = e.target.value
     if (!inputValue.trim()) return 
     // add the current tag the old list of tags
-    setTags([...tags, inputValue])
+    if (tags.length <= 5) setTags([...tags, inputValue])
     // clear the input
     e.target.value = ""
   }
@@ -40,25 +40,29 @@ export default function PhotoModal({show}) {
   }
 
   const removeLocation = () => {
-    setInputValue("")
+    setLocation("")
   }
 
   const handleLocation = (e) => {
     let userSuggestions = []
     if (e.target.value !== "") {
-      setInputValue(e.target.value)
+      setLocation(e.target.value)
       locations.map((location) => {
         if (location.startsWith(e.target.value) || location.includes(e.target.value)) userSuggestions.push(location)
       })
     }
+    else setLocation("")
     setSuggestions(userSuggestions)
   }
 
-  console.log(inputValue)
-
   const addSuggestion = (suggestion) => {
-    setInputValue(suggestion)
+    setLocation(suggestion)
     setSuggestions([])
+  }
+
+  const handleDescription = (e) => {
+    if (e.target.value !== "") setDescription(e.target.value)
+    else setDescription("")
   }
 
   return (
@@ -115,7 +119,7 @@ export default function PhotoModal({show}) {
                 >
                   <input 
                     type="text"
-                    value = {inputValue}
+                    value = {location}
                     placeholder="iraq, baghdad" 
                     onChange={handleLocation} 
                     id="location-input"  
@@ -132,7 +136,7 @@ export default function PhotoModal({show}) {
                   </ul>
                   )}
                   {
-                    inputValue !== "" && (
+                    location !== "" && (
                       <span 
                         className={styles.clearText} 
                         style={{
@@ -148,8 +152,15 @@ export default function PhotoModal({show}) {
                 </div>
 
                 <label>Description (Maximum 100 characters):</label>
-                <div className={styles.textareaDiv}>
-                  <textarea placeholder="Add your description"></textarea>
+                <div 
+                  className={styles.textareaDiv}
+                  style={{"border": description.length > 100 ? "1px solid red" : "2px solid #ccc"}}
+                >
+                  <textarea 
+                    placeholder="Add your description"
+                    onChange={handleDescription}
+                    value={description}
+                  />
                   <label>100</label>
                 </div>
 

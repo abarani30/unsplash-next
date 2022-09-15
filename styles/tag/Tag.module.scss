@@ -4,7 +4,6 @@
   margin-top: 90px;
   margin-bottom: 10px;
 
-  
   @media (min-width: 600px) and (max-width: 899px) {
     margin: auto 0.4rem;
     width: 100%;
@@ -17,23 +16,17 @@
 
   @media (max-width: 599px) {
     margin-bottom: -20px;
-    width: 97%;
   }
 
-
-
   .allTags {
-    max-width: 1200px;
-    margin: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 0px;
+    width: 99.4%;
+    padding: 10px 0px;
     overflow-x: scroll;
     white-space: nowrap;
 
     @media (min-width: 600px) and (max-width: 899px) {
       margin-top: 90px;
-      width: 100%;
+      width: 98%;
     }
 
     @media (min-width: 900px) and (max-width: 1150px) {
@@ -42,10 +35,9 @@
     }
 
     @media (max-width: 599px) {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
+      width: 98%;
+      padding: 10px 0px;
       margin-bottom: 1rem;
-      width: 99%;
     }
 
     &::-webkit-scrollbar {

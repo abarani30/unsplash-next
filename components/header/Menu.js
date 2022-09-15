@@ -23,6 +23,7 @@ export const Menu = () => {
         </button>
       </li>
       <li>
+        <img src="https://avatars.githubusercontent.com/u/29902054?v=4" className={styles.userAvatar} />
         <span  className={styles.menuIcon} id="menu-icon">
           <FiMenu size={20} />
         </span>

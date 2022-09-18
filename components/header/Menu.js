@@ -24,7 +24,7 @@ export const Menu = () => {
       </li>
       <li>
         <div className={styles.justify}>
-          <img src="https://avatars.githubusercontent.com/u/29902054?v=4" className={styles.userAvatar} />
+          <img src="https://avatars.githubusercontent.com/u/29902054?v=4" className={styles.userAvatar} id="user-avatar" />
           <span  className={styles.menuIcon} id="menu-icon">
             <FiMenu size={20} />
           </span>
@@ -42,6 +42,14 @@ export const Menu = () => {
                 Submit a photo
               </button>
             </li>
+          </ul>
+        </div>
+        <div className={styles.userDropdown} id="user-dropdown">
+          <ul>
+            <li>Profile</li>
+            <li>Stats</li>
+            <li>Settings</li>
+            <li>Logout</li>
           </ul>
         </div>
       </li>

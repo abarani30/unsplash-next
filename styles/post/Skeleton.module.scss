@@ -1,10 +1,9 @@
 .skeletonGallery {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0px 20px;
+  margin: 140px auto;
+  padding: 0px 32px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 250px;
   grid-auto-flow: dense;
   gap: 20px;
@@ -13,12 +12,24 @@
     padding: 7px;
     gap: 20px;
     grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: 250px;
+    grid-auto-rows: 300px;
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 0 20px;
   }
 
   @media (min-width: 900px) and (max-width: 1150px) {
-    max-width: 1300px;
-  }
+    width: 100%;
+    padding: 0px 20px;
+  }   
+
+  @media (min-width: 1400px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 0 20px;
+  } 
+
 
 .skeletonCard {
   position: relative;

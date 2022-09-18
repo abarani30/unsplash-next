@@ -22,7 +22,12 @@ export default function Post() {
     <div className={styles.imageGallery}>
       {allPosts.length !== 0 ? allPosts.map((post) => (
         <div className={styles.card} key={post.id}>
-          <div className={styles.top}>ali sarrar</div>
+          <div className={styles.top}>
+            <div className={styles.userInfo}>
+              <img src={post.avatar} alt="user_avatar" />
+              <p>{post.username}</p>
+            </div>
+          </div>
           <div className={styles.imageBox}>
             <img
               src={post.postImg}

@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from "../../styles/header/Header.module.scss"
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
 
 export default function Tag() {
 

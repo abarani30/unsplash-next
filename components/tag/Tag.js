@@ -6,7 +6,6 @@ export default function Tag() {
 
   return (
     <div className={styles.tagsWrapper}>
-      <AiOutlineLeft size={18} className={styles.leftArrow} id="left-icon" />
       <div className={styles.allTags}>
         <ul id="tags">
           <li id="tag1">nature</li>
@@ -31,7 +30,6 @@ export default function Tag() {
           <li id="tag20">coding</li>
         </ul>
       </div>
-      <AiOutlineRight size={18} className={styles.rightArrow} id="right-icon" />
     </div> 
   )
 }

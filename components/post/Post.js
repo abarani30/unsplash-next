@@ -1,6 +1,5 @@
 import { useEffect} from 'react';
 import styles from "../../styles/post/Post.module.scss"
-import { AiFillHeart, AiOutlineArrowDown, AiOutlineHeart, AiOutlineLink } from "react-icons/ai"
 import allPosts from "../../PostList.json"
 import Skeleton from "./Skeleton"
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { Header } from '../components/header/Header'
 import Post from '../components/post/Post'
-import Tag from '../components/tag/Tag'
 
 export default function Home() {
   return (

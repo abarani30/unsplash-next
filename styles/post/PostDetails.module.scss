@@ -44,6 +44,7 @@
 
         @media (max-width: 599px) {
           gap: 15px;
+          padding: 2px;
           align-items: flex-start;
           justify-content: flex-start;
           flex-direction: column;
@@ -191,6 +192,7 @@
           margin-top: 5px;
           flex-direction: column;
           gap: 20px;
+          padding: 5px;
         }
 
         .left {
@@ -276,6 +278,7 @@
           margin-top: 5px;
           flex-direction: column;
           gap: 13px;
+          padding: 20px 5px;
         }
 
         .location {

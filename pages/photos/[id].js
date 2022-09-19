@@ -1,5 +1,6 @@
 import styles from "../../styles/post/PostDetails.module.scss"
 import { FiMaximize2, FiMinimize2 } from "react-icons/fi"
+import Link from "next/link"
 
 export default function PostDetails() {
   return (
@@ -49,7 +50,9 @@ export default function PostDetails() {
             <div className={styles.right}>
               <button className={styles.downloadBtn}>Share</button>
               <button className={styles.downloadBtn}>Report</button>
-              <button className={styles.downloadBtn}>Cancel</button>
+              <Link href={"/"}>
+                <button className={styles.downloadBtn}>Back</button>
+              </Link>
             </div>
           </div>
 

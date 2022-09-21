@@ -15,12 +15,7 @@ export const Header = () => {
       <PhotoModal show={show} />
       <div className={styles.header} id="header">
         <div className={styles.innerContainer}>
-          <div style={{
-            display: "flex", 
-            justifyContent: "space-between", 
-            alignItems: "center",
-            width: "100%"
-          }}>
+          <div className={styles.topHeader}>
             <Logo />
             <Menu />
           </div>

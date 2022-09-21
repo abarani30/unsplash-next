@@ -32,6 +32,14 @@
       height: 100%;
       padding-top: 10px;
 
+      .topHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 5px;
+      }
+
       .tagsWrapper {
         display: flex;
         justify-content: space-between;
@@ -152,6 +160,7 @@
             fill: #888;
             font-size: 18.5px;
             cursor: pointer;
+            z-index: 9999;
 
             &:hover {
               fill: black;
@@ -160,6 +169,8 @@
           }
   
           input {
+            position: absolute;
+            left: 0px;
             width: 100%;
             padding: 12px 12px 12px 40px;
             border-radius: 20px;
@@ -168,9 +179,12 @@
             font-size: 14px;
             border: none;
             outline: none;
+
+            &:hover {
+              border: 1.2px solid #ccc;
+            }
   
             &:focus {
-              border: 1.2px solid #ccc;
               background: white;
             }
   
@@ -290,7 +304,6 @@
       
 
         .dropdown {
-          display: none;
           border-radius: 5px;
           right: -20px;
           margin-top: 15px;
@@ -365,7 +378,6 @@
       
 
         .userDropdown {
-          display: none;
           border-radius: 5px;
           right: 20px;
           margin-top: 15px;

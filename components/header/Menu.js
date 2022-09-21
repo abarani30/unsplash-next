@@ -37,6 +37,10 @@ export const Menu = () => {
     }
   }
   
+  const hideDropdown = () => {
+    showMenuDropdown(false)
+    showUserDropdown(false)
+  }
 
   return (
     <ul className={styles.menu}>
@@ -53,8 +57,8 @@ export const Menu = () => {
             <FiMenu size={20} />
           </span>
         </div>
-        {menuDropdown && <MenuDropdown toggle={toggleModal} />}
-        {userDropdown && <UserDropdown />}
+        {menuDropdown && <MenuDropdown toggle={toggleModal} hide={hideDropdown} />}
+        {userDropdown && <UserDropdown hide={hideDropdown} />}
       </li>
   </ul>
   )

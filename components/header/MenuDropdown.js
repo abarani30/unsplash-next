@@ -1,8 +1,9 @@
 import styles from "../../styles/header/Header.module.scss"
 
-export default function MenuDropdown({ toggle }) {
+export default function MenuDropdown({ hide, toggle }) {
+
   return (
-    <div className={styles.dropdown} id="menu-dropdown">
+    <div className={styles.dropdown} id="menu-dropdown" onMouseLeave={() => hide()}>
       <ul>
         <li>About Me</li>
         <li>Dev. API</li>

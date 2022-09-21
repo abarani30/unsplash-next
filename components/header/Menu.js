@@ -21,24 +21,12 @@ export const Menu = () => {
   }
 
   const toggleUserDropdown = () => {
-    if (userDropdown) showMenuDropdown(false)
-      
-    else {
-      showUserDropdown(!userDropdown) 
-      showMenuDropdown(false)
-    }
+    showUserDropdown(!userDropdown)
+    showMenuDropdown(false)
   }
   
   const toggleMenuDropdown = () => {
-    if (menuDropdown) showMenuDropdown(!menuDropdown) 
-    else {
-      showMenuDropdown(!menuDropdown)
-      showUserDropdown(false)
-    }
-  }
-  
-  const hideDropdown = () => {
-    showMenuDropdown(false)
+    showMenuDropdown(!menuDropdown)
     showUserDropdown(false)
   }
 
@@ -57,8 +45,8 @@ export const Menu = () => {
             <FiMenu size={20} />
           </span>
         </div>
-        {menuDropdown && <MenuDropdown toggle={toggleModal} hide={hideDropdown} />}
-        {userDropdown && <UserDropdown hide={hideDropdown} />}
+        {menuDropdown && <MenuDropdown toggle={toggleModal} />}
+        {userDropdown && <UserDropdown />}
       </li>
   </ul>
   )

@@ -1,0 +1,322 @@
+.wrapper {
+  width: 100%;
+  padding: 0px 20px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+
+  @media (max-width: 599px) {
+    padding: 0px 10px;
+    gap: 30px;
+  }
+
+  .userInfo {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    margin: 20px;
+
+    @media (max-width: 599px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .imageSection {
+      height: auto;
+      padding: 10px;
+      flex: 0.45;
+
+      @media (max-width: 599px) {
+        padding: 0px;
+        width: 100%;
+      }
+      
+      .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        float: right;
+
+        @media (max-width: 599px) {
+          float: left;
+          width: 120px;
+          height: 120px;
+        }
+      }
+
+    }
+
+    .basicInfo {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+      padding-top: 10px;
+
+      @media (max-width: 599px) {
+        width: 99%;
+        margin-top: 10px;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+
+        .justify {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @media (max-width: 599px) {
+            display: none;
+          }
+
+          .username {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+          }
+        }
+        
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+
+          .btnPrimary {
+            background: #007fff;
+            width: 50px;
+            height: 30px;
+            border-radius: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: white;
+            cursor: pointer;
+          }
+
+          .customBtn {
+            width: 40px;
+            height: 30px;
+            background: transparent;
+            border: 1.2px solid #d1d1d1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            border-radius: 3px;
+            cursor: pointer;
+
+            .icon {
+              fill: #767676;
+            }
+
+            &:hover {
+                border-color: #111;
+            }
+
+            &:hover > .icon {
+                fill: #111;
+            }
+          }
+        }
+      }
+
+      .bio {
+        width: 70%;
+        line-height: 25px;
+
+        @media (max-width: 599px) {
+          width: 100%;
+          font-size: 15px;
+        }
+      }
+
+      .afh, .location, .connect {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+
+        @media (max-width: 599px) {
+          font-size: 15px;
+        }
+
+      }
+
+      .afh {
+        color: #007fff;
+
+        .afhIcon {
+          fill: #007fff;
+        }
+      }
+
+      .location {
+        margin-top: -5px;
+        color: #767676;
+        cursor: pointer;
+
+        .locIcon {
+          fill: #767676;
+        }
+
+        &:hover {
+          color: #333;
+        }
+
+        &:hover > .locIcon {
+          fill: #333;
+        }
+
+      }
+      
+      .connect {
+        margin-top: -5px;
+        color: #767676;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+          border: 5px solid #0000;
+          border-top-color: #d1d1d1;
+          content: "";
+          position: relative;
+          top: 3px;
+          transition: border .1s ease-in-out;
+          cursor: pointer;
+        }
+
+        .connIcon {
+          fill: #767676;
+        }
+
+        &:hover {
+          color: #333;
+        }
+
+        &:hover > &:after {
+          border-top-color: #333;
+        }
+        
+        &:hover > .connIcon {
+          fill: #333;
+        }
+      }
+
+      .interests {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 15px;
+        margin-top: 5px;
+
+        .tags {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          overflow: hidden;
+
+          li {
+            font-size: 15px;
+            list-style: none;
+            padding: 5px 8px;
+            background: #eee;
+            color: #767676;
+            border-radius: 3px;
+            cursor: pointer;
+
+            &:hover {
+              background: #ddd;
+              color: #111;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .linkList {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    padding: 0px;
+    border-bottom: 1.5px solid #ccc;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      list-style: none;
+      color: #767676;
+      padding: 10px 0px;
+      font-size: 14.5px;
+      cursor: pointer;
+
+      .icon {
+        fill: #ccc;
+
+        @media (max-width: 599px) {
+          display: none;
+        }
+      }
+
+      label {
+        @media (max-width: 599px) {
+          display: none;
+        }
+      }
+
+      &:hover {
+        color: #111;
+      }
+      
+      &:hover > .icon {
+        fill: #111;
+      }
+    }
+    
+    .active {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      list-style: none;
+      color: #111;
+      padding: 10px 0px;
+      font-size: 14.5px;
+      cursor: pointer;
+      border-bottom: 1.8px solid #111;
+
+      .icon {
+        fill: #111;
+
+        @media (max-width: 599px) {
+          display: none;
+        }
+      }
+
+      label {
+        @media (max-width: 599px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+

@@ -7,7 +7,7 @@ export default function Document() {
       <Head>
         <link rel="icon" type="image/png" sizes="32x32" href="https://unsplash.com/favicon-32x32.png" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-        <Script src="js/main.js" strategy="lazyOnload" />
+        {/* <Script src="js/main.js" strategy="lazyOnload" /> */}
       </Head>
       <body>
         <Main />

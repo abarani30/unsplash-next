@@ -217,8 +217,10 @@
 
         .vl {
           background-color: #d1d1d1;
+          color: white;
           height: 30px;
           width: 1px;
+          margin-left: 10px;
 
           @media (max-width: 599px) {
             display: none;

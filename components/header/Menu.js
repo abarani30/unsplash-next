@@ -40,7 +40,7 @@ export const Menu = () => {
       </li>
       <li>
         <div className={styles.justify}>
-          <img src="https://avatars.githubusercontent.com/u/29902054?v=4" className={styles.userAvatar} onClick={toggleUserDropdown} />
+          <img src="https://avatars.githubusercontent.com/u/29902054?v=4" className={styles.userAvatar} onClick={toggleUserDropdown} alt="user_avatar" />
           <span  className={styles.menuIcon} id="menu-icon" onClick={toggleMenuDropdown}>
             <FiMenu size={20} />
           </span>

@@ -3,6 +3,7 @@ import UserInfo from "../../components/profile/UserInfo"
 import NavList from "../../components/profile/Nav.List"
 import MyPhotos from "../../components/profile/MyPhotos"
 import styles from "../../styles/profile/Profile.module.scss"
+import Head from "next/head"
 
 export default function Profile() {
 
@@ -15,12 +16,17 @@ export default function Profile() {
   }
 
   return (
-    <div className={styles.wrapper}> 
-      <UserInfo />
-      <NavList toggle={activateItem} active={active} />
-      {active === 1 &&  <MyPhotos />}
-      {active === 2 &&  <p>You don't have any liked photos yet!</p>}
-      {active === 3 &&  <p>You don't have any collections yet!</p>}
-    </div>
+    <>
+      <Head>
+        <title>ali sattar | Unsplash</title>
+      </Head>
+      <div className={styles.wrapper}> 
+        <UserInfo />
+        <NavList toggle={activateItem} active={active} />
+        {active === 1 &&  <MyPhotos />}
+        {active === 2 &&  <p>You don't have any liked photos yet!</p>}
+        {active === 3 &&  <p>You don't have any collections yet!</p>}
+      </div>
+    </>
   )
 }

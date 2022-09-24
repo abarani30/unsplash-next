@@ -1,6 +1,16 @@
+import { useState } from "react"
+import UserLinks from "./UserLinks"
 import styles from "../../styles/profile/Profile.module.scss"
 
+
 export default function Extra() {
+
+  const [userLinks, showUserLinks] = useState(false)
+  
+  const displayUserLinks = () => {
+    showUserLinks(!userLinks)
+  }
+
   return (
     <>
       <p className={styles.bio}>
@@ -15,9 +25,10 @@ export default function Extra() {
         <svg width="17" height="17" className={styles.locIcon}  viewBox="0 0 32 32" version="1.1" aria-hidden="false"><path d="M16 2.66669C9.99998 2.66669 5.33331 7.06669 5.33331 12.6667C5.33331 19.8667 12.9333 27.0667 15.3333 29.0667C15.7333 29.4267 16.2666 29.4267 16.6666 29.0667C19.0666 27.0667 26.6666 19.8667 26.6666 12.6667C26.6666 7.06669 22 2.66669 16 2.66669ZM16 18.6667C13.0666 18.6667 10.6666 16.2667 10.6666 13.3334C10.6666 10.4 13.0666 8.00002 16 8.00002C18.9333 8.00002 21.3333 10.4 21.3333 13.3334C21.3333 16.2667 18.9333 18.6667 16 18.6667Z"></path></svg>
         <p>iraq, baghdad</p>
       </div>
-      <div className={styles.connect}>
+      <div className={styles.connect} onClick={displayUserLinks}>
         <svg width="17" height="17" className={styles.connIcon} viewBox="0 0 32 32" version="1.1" aria-hidden="false"><path d="M13 21l-2-2 8-8 2 2-8 8zm1.1 3.1c-1.7 1.7-4.5 1.7-6.2 0-1.7-1.7-1.7-4.5 0-6.2l4-4L10 12l-4 4c-2.7 2.7-2.7 7.2 0 9.9s7.2 2.7 9.9 0l4-4L18 20l-3.9 4.1zm11.8-18c-2.7-2.7-7.2-2.7-9.9 0l-4 4 1.9 1.9 4-4c1.7-1.7 4.5-1.7 6.2 0 1.7 1.7 1.7 4.5 0 6.2l-4 4L22 20l4-4c2.7-2.7 2.7-7.2-.1-9.9z"></path></svg>
         <p>Connect with ali</p>
+        {userLinks ? <UserLinks /> : ""}
       </div>
     </>
   )

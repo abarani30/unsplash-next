@@ -24,8 +24,8 @@ export default function Profile() {
         <UserInfo />
         <NavList toggle={activateItem} active={active} />
         {active === 1 &&  <MyPhotos />}
-        {active === 2 &&  <p>You don't have any liked photos yet!</p>}
-        {active === 3 &&  <p>You don't have any collections yet!</p>}
+        {active === 2 &&  <img src="https://unsplash.com/a/img/empty-states/photos.png" className={styles.noPhoto} alt="No photos yet!" />}
+        {active === 3 &&  <img src="https://unsplash.com/a/img/empty-states/photos.png" className={styles.noPhoto} alt="No collections yet!" />}
       </div>
     </>
   )

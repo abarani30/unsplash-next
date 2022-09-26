@@ -259,6 +259,15 @@
           align-items: center;
           gap: 15px;
 
+          .language {
+            color: #767676;
+
+            &:hover {
+              color: #111;
+            }
+          }
+          
+
           .userAvatar {
             margin-top: 0px;
             width: 30px;

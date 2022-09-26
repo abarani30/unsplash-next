@@ -5,7 +5,7 @@ import postReducer from "../app/features/slices/postSlice"
 const store = configureStore({
   reducer: {
     modal: modalReducer,
-    post: postReducer
+    post: postReducer,
   }
 })
 

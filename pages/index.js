@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { Header } from '../components/header/Header'
 import Post from '../components/post/Post'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -21,4 +23,12 @@ export default function Home() {
       <Post />
     </>
   )
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
 }

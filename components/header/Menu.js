@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux"
 import { toggle } from "../../app/features/slices/modalSlice"
 import UserDropdown from "./UserDropdown"
 import MenuDropdown from "./MenuDropdown"
-import { MdLanguage } from "react-icons/md"
 import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next";
 import LocalSwitcher from "../LocalSwitcher"
@@ -47,7 +46,7 @@ export const Menu = () => {
 
   return (
     <ul className={styles.menu}>
-      <li><button className={styles.login}>{t("home.login")}</button></li>
+      <li><button className={locale === "en" ? styles.login : styles.loginAr}>{t("home.login")}</button></li>
       <li>
         <button className={styles.submitPhoto} onClick={toggleModal} id="submit">
           {t("home.submitPhoto")}
@@ -57,7 +56,7 @@ export const Menu = () => {
         <div className={styles.justify}>
           <LocalSwitcher />
           <img src="https://avatars.githubusercontent.com/u/29902054?v=4" className={styles.userAvatar} onClick={toggleUserDropdown} alt="user_avatar" />
-          <span  className={styles.menuIcon} id="menu-icon" onClick={toggleMenuDropdown}>
+          <span  className={locale === "en" ? styles.menuIcon : styles.menuIconAr} id="menu-icon" onClick={toggleMenuDropdown}>
             <FiMenu size={20} />
           </span>
         </div>

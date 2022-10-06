@@ -3,6 +3,13 @@
     "login": "Log in",
     "explore": "Explore",
     "favs": "Favs",
-    "submitPhoto": "Submit a photo"
+    "submitPhoto": "Submit a photo",
+    "aboutMe": "About Me",
+    "devAPI": "Dev. API",
+    "contactUs": "Contact Us",
+    "profile": "Profile",
+    "stats": "Stats",
+    "settings": "Settings",
+    "logout": "Logout"
   }
 }

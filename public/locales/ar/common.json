@@ -3,6 +3,13 @@
     "login": "تسجيل الدخول",
     "explore": "اكتشف",
     "favs": "مفضلة",
-    "submitPhoto": "اضف صورة"
+    "submitPhoto": "اضف صورة",
+    "aboutMe": "عن المطور",
+    "devAPI": "واجهة المطورين",
+    "contactUs": "اتصل بنا",
+    "profile": "الملف الشخصي",
+    "stats": "الاحصائيات",
+    "settings": "الاعدادات",
+    "logout": "تسجيل الخروج"
   }
 }

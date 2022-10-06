@@ -17,8 +17,8 @@ export default function LocaleSwitcher() {
         return (
           <span key={"locale-" + locale}>
             <Link href={{ pathname, query }} as={asPath} locale={locale}>
-              <a>
-                {locale === "en" ? "En" : locale === "ar" ? "Ar" : null}
+              <a styles={{width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                {locale === "en" ? "En" : locale === "ar" ? "ع" : null}
               </a>
             </Link>
           </span>

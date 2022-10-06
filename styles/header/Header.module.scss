@@ -233,6 +233,99 @@
         }
       }
 
+      .searchContainerAr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 15px;
+        width: 100%;
+
+        .search {
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          .searchIconAr {
+            position: absolute;
+            right: 15px;
+            fill: #888;
+            font-size: 18.5px;
+            cursor: pointer;
+            z-index: 9999;
+
+            &:hover {
+              fill: black;
+            }
+  
+          }
+  
+          .searchInputAr {
+            position: absolute;
+            right: 0px;
+            width: 100%;
+            padding: 12px 40px 12px 12px;
+            border-radius: 20px;
+            background: #eee;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            border: none;
+            outline: none;
+
+            &:hover {
+              border: 1.2px solid #ccc;
+            }
+  
+            &:focus {
+              background: white;
+            }
+  
+          }
+        }
+
+        button {
+          margin-right: 15px;
+          border: none;
+          background: transparent;
+          color: #666;
+          font-size: 14px;
+          font-family: Arial, Helvetica, sans-serif;
+          cursor: pointer;
+          transition: all ease-in-out 1s;
+
+          &:hover {
+            color: black;
+          }
+
+          @media (max-width: 599px) {
+            display: none;
+          }
+
+          @media (min-width: 600px) and (max-width: 899px) {
+            display: none;
+          }
+
+        }
+
+        .vlAr {
+          background-color: #d1d1d1;
+          color: white;
+          height: 30px;
+          width: 1px;
+          margin-right: 10px;
+
+          @media (max-width: 599px) {
+            display: none;
+          }
+
+          @media (min-width: 600px) and (max-width: 899px) {
+           display: none;
+          }
+
+        }
+      }
+
     }
 
     .menu {
@@ -296,6 +389,28 @@
             }
   
           }
+          
+          .menuIconAr {
+            color: #777;
+            margin-left: -14px;
+  
+            &:hover {
+              color: #111;
+            }
+  
+            @media (max-width: 599px) {
+              margin-left: -7px;
+            }
+  
+            @media (min-width: 600px) and (max-width: 899px) {
+              margin-left: -10px;
+            }
+  
+            @media (min-width: 900px) and (max-width: 1150px) {
+              margin-left: -10px;
+            }
+  
+          }
         }
 
         .dropdown:before {
@@ -338,6 +453,79 @@
 
           @media (min-width: 900px) and (max-width: 1150px) {
             right: -15px;
+          }
+
+          ul li {
+            list-style: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            padding: 8px;
+            color: #777;
+
+            &:hover {
+              font-weight: 600;
+            }
+            
+            button {
+              display: none;
+             
+              @media (max-width: 599px) {
+                display: block;
+              }
+    
+              @media (min-width: 600px) and (max-width: 899px) {
+                display: none;
+              }
+    
+              @media (min-width: 900px) and (max-width: 1150px) {
+                display: none;
+              }
+
+            }
+          
+          }
+          
+        }
+        .dropdownAr:before {
+          content: "";
+          position: absolute;
+          left: 10px;
+          top: -7.6px;
+          background: #fff;
+          width: 12px;
+          height: 12px;
+          border-left: 1.5px solid #ccc;
+          border-right: 1.5px solid #fff;
+          border-top: 1.5px solid #ccc;
+          border-bottom: 1.5px solid #fff;
+          transform: rotate(45deg);
+        }
+      
+
+        .dropdownAr {
+          border-radius: 5px;
+          left: -20px;
+          margin-top: 15px;
+          position: absolute;
+          background: #fff;
+          border: 1.5px solid #ccc;
+          width: 150px;
+          z-index: 9999;
+          padding: 5px;
+          padding-bottom: 0px;
+          z-index: 99;
+
+          @media (max-width: 599px) {
+            left: -10px;
+            width: 180px;
+          }
+
+          @media (min-width: 600px) and (max-width: 899px) {
+            left: -15px;
+          }
+
+          @media (min-width: 900px) and (max-width: 1150px) {
+            left: -15px;
           }
 
           ul li {
@@ -439,6 +627,73 @@
           
         }
 
+        .userDropdownAr:before {
+          content: "";
+          position: absolute;
+          left: 10px;
+          top: -7.6px;
+          background: #fff;
+          width: 12px;
+          height: 12px;
+          border-left: 1.5px solid #ccc;
+          border-right: 1.5px solid #fff;
+          border-top: 1.5px solid #ccc;
+          border-bottom: 1.5px solid #fff;
+          transform: rotate(45deg);
+        }
+      
+
+        .userDropdownAr {
+          border-radius: 5px;
+          left: 20px;
+          margin-top: 15px;
+          position: absolute;
+          background: #fff;
+          border: 1.5px solid #ccc;
+          width: 130px;
+          z-index: 9999;
+          padding-top: 5px;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-bottom: 10px;
+          z-index: 99;
+
+          @media (max-width: 599px) {
+            left: 25px;
+          }
+
+          ul li {
+            list-style: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            padding: 8px;
+            color: #777;
+
+            &:hover {
+              font-weight: 600;
+            }
+            
+            button {
+              display: none;
+             
+              @media (max-width: 599px) {
+                display: block;
+              }
+    
+              @media (min-width: 600px) and (max-width: 899px) {
+                display: none;
+              }
+    
+              @media (min-width: 900px) and (max-width: 1150px) {
+                display: none;
+              }
+
+            }
+          
+          }
+          
+        }
+
         .submitPhoto {
           margin-right: -12px;
           border: none;
@@ -474,6 +729,36 @@
         
         .login {
           margin-right: -7px;
+          border: none;
+          color: #777;
+          background-color: transparent;
+          font-size: 13.5px;
+          border-radius: 5px;
+          margin-top: 0px;
+          cursor: pointer;
+          font-family: Arial, Helvetica, sans-serif;
+          transition: all ease-in-out 1s;
+
+          &:hover {
+            color: #111;
+          }
+
+          @media (max-width: 599px) {
+            display: none;
+          }
+
+          @media (min-width: 600px) and (max-width: 899px) {
+            margin-right: -10px;
+          }
+
+          @media (min-width: 900px) and (max-width: 1150px) {
+            margin-right: -10px;
+          }
+
+        }
+        
+        .loginAr {
+          margin-left: -7px;
           border: none;
           color: #777;
           background-color: transparent;

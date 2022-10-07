@@ -1,32 +1,35 @@
-import React from 'react'
+import { useRouter } from "next/router"
 import styles from "../../styles/header/Header.module.scss"
 
 export default function Tag() {
 
+  const router = useRouter()
+  const { locale } = router
+
   return (
     <div className={styles.tagsWrapper}>
       <div className={styles.allTags}>
-        <ul id="tags">
-          <li id="tag1">nature</li>
-          <li id="tag2">forrest</li>
-          <li id="tag3">recipes</li>
-          <li id="tag4">train</li>
-          <li id="tag5">coding</li>
-          <li id="tag6">nature</li>
-          <li id="tag7">forrest</li>
-          <li id="tag8">recipes</li>
-          <li id="tag9">train</li>
-          <li id="tag10">coding</li>
-          <li id="tag11">nature</li>
-          <li id="tag12">forrest</li>
-          <li id="tag13">recipes</li>
-          <li id="tag14">train</li>
-          <li id="tag15">coding</li>
-          <li id="tag16">nature</li>
-          <li id="tag17">forrest</li>
-          <li id="tag18">recipes</li>
-          <li id="tag19">train</li>
-          <li id="tag20">coding</li>
+        <ul>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>nature</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>forrest</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>recipes</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>train</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>coding</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>nature</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>forrest</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>recipes</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>train</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>coding</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>nature</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>forrest</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>recipes</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>train</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>coding</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>nature</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>forrest</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>recipes</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>train</li>
+          <li className={locale === "en" ? styles.tag : styles.tagAr}>coding</li>
         </ul>
       </div>
     </div> 

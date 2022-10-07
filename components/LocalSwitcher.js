@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import styles from "../styles/header/Header.module.scss"
 
 export default function LocaleSwitcher() {
   const router = useRouter();
@@ -17,7 +18,7 @@ export default function LocaleSwitcher() {
         return (
           <span key={"locale-" + locale}>
             <Link href={{ pathname, query }} as={asPath} locale={locale}>
-              <a styles={{width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+              <a className={styles.language}>
                 {locale === "en" ? "En" : locale === "ar" ? "ع" : null}
               </a>
             </Link>

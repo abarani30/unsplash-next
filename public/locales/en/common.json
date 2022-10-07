@@ -10,6 +10,17 @@
     "profile": "Profile",
     "stats": "Stats",
     "settings": "Settings",
-    "logout": "Logout"
+    "logout": "Logout",
+    "submitToUnsplash": "Submit to unsplash",
+    "needHelp": "Need help?",
+    "tags": "Tags",
+    "noOfTags": "Maximum 5 tags",
+    "location": "Location",
+    "description": "Description",
+    "descriptionLength": "Maximum 100 characters",
+    "uploadImage": "Upload an image",
+    "readLicense": "Read the unsplash License",
+    "submit": "Submit",
+    "cancel": "Cancel"
   }
 }

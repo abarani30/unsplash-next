@@ -1,10 +1,15 @@
+import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toggle } from '../../app/features/slices/modalSlice'
 import styles from "../../styles/modal/PhotoModal.module.scss"
 
-
 export default function PhotoModal({show}) {
+
+  const router = useRouter()
+  const { locale } = router
+  const { t } = useTranslation("")
 
   let locations = [
     "iraq, baghdad", "iraq, erbil", "iraq, najaf", "iraq, karbala",
@@ -73,8 +78,8 @@ export default function PhotoModal({show}) {
         <div className={styles.modalContent}>
           
           <div className={styles.top}>
-            <p>Submit to unsplash</p>
-            <p>Need help?</p>
+            <p>{t("home.submitToUnsplash")}</p>
+            <p>{t("home.needHelp")}</p>
           </div>
 
           <div className={styles.frame} id="frame">
@@ -92,7 +97,7 @@ export default function PhotoModal({show}) {
 
               <div className={styles.inputsSection}>
 
-                <label>Tags (Maximum 5 tags):</label>
+                <label className={locale === "en" ? styles.labelEn : styles.labelAr}>{t("home.tags")} ({t("home.noOfTags")}):</label>
                 <div className={styles.tags}
                 style={{"border": tags.length > 5 ? "1px solid red" : "2px solid #ccc"}}
                 >
@@ -106,11 +111,11 @@ export default function PhotoModal({show}) {
                       </div>
                     ))
                   } 
-                  <input type="text" onKeyDown={handleKeyDown} placeholder="Add tag" />
-                  <label>5</label>
+                  <input type="text" onKeyDown={handleKeyDown} placeholder={locale === "en" ? "Add tag" : "اضف تصنيف"} />
+                  <label className={locale === "en" ? styles.numberEn : styles.numberAr}>5</label>
                 </div>
 
-                <label>Location:</label>
+                <label className={locale === "en" ? styles.labelEn : styles.labelAr}>{t("home.location")}:</label>
                 <div className={styles.locationDiv} 
                   style={{
                     "height": suggestions.length === 0 ? "35px" : "100px",
@@ -122,14 +127,14 @@ export default function PhotoModal({show}) {
                     value = {location}
                     placeholder="iraq, baghdad" 
                     onChange={handleLocation} 
-                    id="location-input"  
+                    className={locale === "en" ? styles.locInput : styles.locInputAr} 
                   />
                   {suggestions.length !== 0 && (
                     <ul className={styles.suggestionsList}>
                     {suggestions.map((suggest, index) => (
                       <li key={index} className={styles.suggestItem} 
                           onClick={() => addSuggestion(suggest)}>
-                        <i className={styles.icon}></i>
+                        <i className={locale === "en" ? styles.icon : styles.iconAr}></i>
                         <p>{suggest}</p>
                       </li>
                     ))}
@@ -138,7 +143,7 @@ export default function PhotoModal({show}) {
                   {
                     location !== "" && (
                       <span 
-                        className={styles.clearText} 
+                        className={locale === "en" ? styles.clearText : styles.clearTextAr} 
                         style={{
                           display: "flex", 
                           justifyContent: "center", 
@@ -151,20 +156,21 @@ export default function PhotoModal({show}) {
                   }
                 </div>
 
-                <label>Description (Maximum 100 characters):</label>
+                <label className={locale === "en" ? styles.labelEn : styles.labelAr}>{t("home.description")} ({t("home.descriptionLength")}):</label>
                 <div 
                   className={styles.textareaDiv}
                   style={{"border": description.length > 100 ? "1px solid red" : "2px solid #ccc"}}
                 >
                   <textarea 
-                    placeholder="Add your description"
+                    placeholder={locale === "en" ? "Add your description" : "اضف وصف"}
                     onChange={handleDescription}
                     value={description}
+                    className={locale === "en" ? styles.description : styles.descriptionAr}
                   />
-                  <label>100</label>
+                  <label className={locale === "en" ? styles.numberEn : styles.numberAr}>100</label>
                 </div>
 
-                <label>Upload an image:</label>
+                <label className={locale === "en" ? styles.labelEn : styles.labelAr}>{t("home.uploadImage")}:</label>
                 <input className={styles.uploadFile} type="file" />
               </div>
 
@@ -172,10 +178,10 @@ export default function PhotoModal({show}) {
           </div>
 
           <div className={styles.modalFooter}>
-            <a href="!#">Read the unsplash License</a>
+            <a href="!#">{t("home.readLicense")}</a>
             <div className={styles.buttons}>
-              <button className={styles.cancelBtn} onClick={closeModal}>Cancel</button>
-              <button className={styles.cancelBtn}>Submit</button>
+              <button className={styles.cancelBtn} onClick={closeModal}>{t("home.cancel")}</button>
+              <button className={styles.cancelBtn}>{t("home.submit")}</button>
             </div>
           </div>
 

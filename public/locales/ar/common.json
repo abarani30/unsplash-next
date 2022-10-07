@@ -10,6 +10,17 @@
     "profile": "الملف الشخصي",
     "stats": "الاحصائيات",
     "settings": "الاعدادات",
-    "logout": "تسجيل الخروج"
+    "logout": "تسجيل الخروج",
+    "submitToUnsplash": "اضف صوره جديدة",
+    "needHelp": "هل انت بحاجة للمساعده؟",
+    "tags": "التصنيفات",
+    "noOfTags": "فقط 5 تصنيفات",
+    "location": "الموقع",
+    "description": "الوصف",
+    "descriptionLength": "فقط 100 حرف",
+    "uploadImage": "ارفع صورة",
+    "readLicense": "اقرأ شروط الموقع",
+    "submit": "اضف صورة",
+    "cancel": "الغاء"
   }
 }

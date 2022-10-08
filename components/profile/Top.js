@@ -1,6 +1,10 @@
+import { useTranslation } from "next-i18next"
 import styles from "../../styles/profile/Profile.module.scss"
 
 export default function Top() {
+
+  const { t } = useTranslation("")
+
   return (
     <div className={styles.top}>
       <div className={styles.justify}>
@@ -8,7 +12,7 @@ export default function Top() {
       </div>
       <div className={styles.buttons}>
         <div className={styles.btnPrimary}>
-          Hire
+          {t("profile.hire")}
         </div>
         <div className={styles.customBtn}>
           <svg width="18" height="18" className={styles.icon} viewBox="0 0 32 32" version="1.1" aria-hidden="false"><path d="M23.7 24v2.7H2.3V24c0-3.5 7.1-5.3 10.7-5.3s10.7 1.8 10.7 5.3zM13 16c2.9 0 5.3-2.4 5.3-5.3S15.9 5.3 13 5.3s-5.3 2.4-5.3 5.3S10.1 16 13 16zm14.7-2.7v-4H25v4h-4V16h4v4h2.7v-4h4v-2.7h-4z"></path></svg>

@@ -22,5 +22,19 @@
     "readLicense": "Read the unsplash License",
     "submit": "Submit",
     "cancel": "Cancel"
+  },
+  "profile" : {
+    "hire": "Hire",
+    "availableForHire": "Available for hire",
+    "connectWith": "Connect with",
+    "website": "Website",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "youtube": "Youtube",
+    "interests": "Interests",
+    "photos": "Photos",
+    "likes": "Likes",
+    "collections": "Collections"
   }
 }

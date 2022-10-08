@@ -1,9 +1,13 @@
+import { useTranslation } from "next-i18next"
 import styles from "../../styles/profile/Profile.module.scss"
 
 export default function Favs() {
+
+  const { t } = useTranslation("")
+
   return (
     <div className={styles.interests}>
-      Interests
+      {t("profile.interests")}
       <ul className={styles.tags}>
         <li>nature</li>
         <li>football</li>

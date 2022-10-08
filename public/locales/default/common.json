@@ -21,6 +21,22 @@
     "uploadImage": "Upload an image",
     "readLicense": "Read the unsplash License",
     "submit": "Submit",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "availableForHire": "متاح للتوظيف",
+    "connectWith": "تواصل مع"
+  },
+  "profile" : {
+    "hire": "Hire",
+    "availableForHire": "Available for hire",
+    "connectWith": "Connect with",
+    "website": "Website",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "youtube": "Youtube",
+    "interests": "Interests",
+    "photos": "Photos",
+    "likes": "Likes",
+    "collections": "Collections"
   }
 }

@@ -22,5 +22,19 @@
     "readLicense": "اقرأ شروط الموقع",
     "submit": "اضف صورة",
     "cancel": "الغاء"
+  },
+  "profile" : {
+    "hire": "وظف",
+    "availableForHire": "متاح للتوظيف",
+    "connectWith": "تواصل مع",
+    "website": "موقع ويب",
+    "facebook": "فيسبوك",
+    "instagram": "انستغرام",
+    "twitter": "تويتر",
+    "youtube": "يوتيوب",
+    "interests": "الإهتمامات",
+    "photos": "الصور",
+    "likes": "الاعجابات",
+    "collections": "المجاميع"
   }
 }

@@ -4,6 +4,7 @@ import NavList from "../../components/profile/Nav.List"
 import MyPhotos from "../../components/profile/MyPhotos"
 import styles from "../../styles/profile/Profile.module.scss"
 import Head from "next/head"
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Profile() {
 
@@ -30,3 +31,9 @@ export default function Profile() {
     </>
   )
 }
+
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+      ...(await serverSideTranslations(locale, ['common']))
+  }
+});

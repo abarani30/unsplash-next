@@ -48,6 +48,31 @@
       }
 
     }
+    
+    .imageSectionAr {
+      height: auto;
+      padding: 10px;
+      flex: 0.45;
+
+      @media (max-width: 599px) {
+        padding: 0px;
+        width: 100%;
+      }
+      
+      .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        float: right;
+
+        @media (max-width: 599px) {
+          float: right;
+          width: 120px;
+          height: 120px;
+        }
+      }
+
+    }
 
     .basicInfo {
       display: flex;

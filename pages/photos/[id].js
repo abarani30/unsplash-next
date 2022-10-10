@@ -1,8 +1,26 @@
 import styles from "../../styles/post/PostDetails.module.scss"
 import { FiMaximize2, FiMinimize2 } from "react-icons/fi"
 import Link from "next/link"
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from "next-i18next";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function PostDetails() {
+
+  const { t } = useTranslation("")
+  const [expand, setExpand] = useState(false)
+  const router = useRouter()
+  const { locale } = router
+
+  function expandImage() {
+    setExpand(true)
+  }
+
+  function shrinkImage() {
+    setExpand(false)
+  }
+
   return (
     <div className={styles.viewPost}>
       <div className={styles.innerPost}>
@@ -10,7 +28,7 @@ export default function PostDetails() {
 
           <div className={styles.top}>
             <div className={styles.userInfo}>
-              <img src="https://avatars.githubusercontent.com/u/29902054?v=4" alt="my_name" className={styles.avatar} />
+              <img src="https://avatars.githubusercontent.com/u/29902054?v=4" alt="my_name" className={locale === "en" ? styles.avatar : styles.avatarAr} />
               <p>Ali Sattar</p>
             </div>
             <div className={styles.right}>
@@ -22,14 +40,19 @@ export default function PostDetails() {
                   <svg width="16" height="16" className={styles.icon} viewBox="0 0 32 32" version="1.1" aria-hidden="false"><path d="M14 3h4v26h-4zM29 14v4h-26v-4z"></path></svg>
                 </div>
               </div>
-              <button className={styles.downloadBtn}>Download</button>
+              <button className={styles.downloadBtn}>{t("photo.download")}</button>
             </div>
           </div>
 
           <div className={styles.middle}>
-            <div className={styles.imgDiv}>
-              <FiMaximize2 size={20} className={styles.expandIcon} />
-              <FiMinimize2 size={20} className={styles.shrinkIcon} />
+            <div className={expand ? styles.expandDiv : styles.shrinkDiv}>
+              {
+                expand 
+                ? 
+                <FiMinimize2 size={20} className={styles.shrinkIcon} onClick={shrinkImage} /> 
+                :
+                <FiMaximize2 size={20} className={styles.expandIcon} onClick={expandImage} />
+              }
               <img
                 src="https://images.unsplash.com/photo-1661151488777-01eb94455b7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
                 className={styles.userPhoto} alt="user-photo" />
@@ -39,19 +62,19 @@ export default function PostDetails() {
           <div className={styles.bottom}>
             <div className={styles.left}>
               <div className={styles.viewers}>
-                <p>Views</p>
+                <p>{t("photo.views")}</p>
                 <label>1350</label>
               </div>
               <div className={styles.downloads}>
-                <p>Downloads</p>
+                <p>{t("photo.downloads")}</p>
                 <label>1000</label>
               </div>
             </div>
             <div className={styles.right}>
-              <button className={styles.downloadBtn}>Share</button>
-              <button className={styles.downloadBtn}>Report</button>
+              <button className={styles.downloadBtn}>{t("photo.share")}</button>
+              <button className={styles.downloadBtn}>{t("photo.report")}</button>
               <Link href={"/"}>
-                <button className={styles.downloadBtn}>Back</button>
+                <button className={styles.downloadBtn}>{t("photo.back")}</button>
               </Link>
             </div>
           </div>
@@ -71,7 +94,7 @@ export default function PostDetails() {
                   d="M21 6v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h1V2h2v2h8V2h2v2h1c1.1 0 2 .9 2 2zM5 8h14V6H5v2zm14 12V10H5v10h14z">
                 </path>
               </svg>
-              <p href="#">Published on 2022-09-01</p>
+              <p href="#">{t("photo.publishedOn")} 2022-09-01</p>
             </div>
             <div className={styles.license}>
               <svg width="16" height="16" viewBox="0 0 32 32" version="1.1" aria-hidden="false">
@@ -79,7 +102,7 @@ export default function PostDetails() {
                   d="M13.3333 18.9333l8.8-8.8L24 12 13.3333 22.6667 8 17.3333l1.86667-1.8666 3.46663 3.4666zM28 6.66668v8.00002c0 7.3333-5.0667 14.2666-12 16-6.93333-1.7334-12-8.6667-12-16V6.66668l12-5.33334 12 5.33334zm-2.6667 1.73333L16 4.26668 6.66667 8.40001v6.26669c0 6 4.00003 11.6 9.33333 13.2 5.3333-1.6 9.3333-7.2 9.3333-13.2V8.40001z">
                 </path>
               </svg>
-              <p href="#">Free to use under the <a href="#">Unsplash License</a></p>
+              <p href="#">{t("photo.freeToUse")} <a href="#">Unsplash License</a></p>
             </div>
           </div>
         </div>
@@ -87,3 +110,9 @@ export default function PostDetails() {
     </div>
   )
 }
+
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+      ...(await serverSideTranslations(locale, ['common']))
+  }
+});

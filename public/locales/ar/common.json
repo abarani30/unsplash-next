@@ -36,5 +36,15 @@
     "photos": "الصور",
     "likes": "الاعجابات",
     "collections": "المجاميع"
+  },
+  "photo" : {
+    "download": "تحميل",
+    "views": "المشاهدات",
+    "downloads": "التحميلات",
+    "share": "مشاركة",
+    "report": "ابلاغ",
+    "back": "رجوع",
+    "publishedOn": "تم النشر في",
+    "freeToUse": "استخدام مجاني حسب"
   }
 }

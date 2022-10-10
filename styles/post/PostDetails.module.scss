@@ -61,6 +61,13 @@
             border-radius: 50%;
             margin-right: 10px;
           }
+          
+          .avatarAr {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-left: 10px;
+          }
   
           p {
             font-size: 0.9rem;
@@ -140,7 +147,7 @@
         align-items: center;
         margin-top: 10px;
 
-        .imgDiv {
+        .shrinkDiv {
           position: relative;
 
           .expandIcon {
@@ -176,6 +183,48 @@
 
           img {
             object-fit: cover;
+          }
+        }
+
+        .expandDiv {
+          position: relative;
+          width: 100%;
+
+          .expandIcon {
+            display: none;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: #ccc;
+            cursor: pointer;
+
+            &:hover {
+              color: white;
+            }
+
+            @media (max-width: 599px) {
+              top: 20px;
+              right: 30px;
+            }
+
+          }
+          
+          .shrinkIcon {
+            position: absolute;
+            right:15px;
+            top  :15px;   
+            color: #ccc;
+            cursor: pointer;
+
+            &:hover {
+              color: white;
+            }
+
+          }
+
+          img {
+            object-fit: cover;
+            width: 100%;
           }
         }
       }

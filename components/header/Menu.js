@@ -8,6 +8,7 @@ import MenuDropdown from "./MenuDropdown"
 import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next";
 import LocalSwitcher from "../LocalSwitcher"
+import { IoMdNotificationsOutline } from "react-icons/io"
 
 export const Menu = () => {
 
@@ -55,6 +56,10 @@ export const Menu = () => {
       <li>
         <div className={styles.justify}>
           <LocalSwitcher />
+          <div className={styles.notificationWrapper}>
+            <label>3</label>
+            <IoMdNotificationsOutline size={22} className={styles.notificationIcon} />
+          </div>
           <img src="https://avatars.githubusercontent.com/u/29902054?v=4" className={styles.userAvatar} onClick={toggleUserDropdown} alt="user_avatar" />
           <span  className={locale === "en" ? styles.menuIcon : styles.menuIconAr} id="menu-icon" onClick={toggleMenuDropdown}>
             <FiMenu size={20} />

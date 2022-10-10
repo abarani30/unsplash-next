@@ -38,5 +38,15 @@
     "photos": "Photos",
     "likes": "Likes",
     "collections": "Collections"
+  },
+  "photo" : {
+    "download": "Download",
+    "views": "Views",
+    "downloads": "Downloads",
+    "share": "Share",
+    "report": "Report",
+    "back": "Back",
+    "publishedOn": "Published on",
+    "freeToUse": "Free to use under the"
   }
 }

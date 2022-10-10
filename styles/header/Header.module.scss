@@ -376,6 +376,10 @@
             height: auto;
             position: relative;
 
+            @media (max-width: 599px) {
+              display: none;
+            }
+
             label {
               position: absolute;
               top: -8px;
